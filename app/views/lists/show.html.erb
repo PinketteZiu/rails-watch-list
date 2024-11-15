@@ -1,13 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-
 <h1> <strong> <%= @list.name %> </strong>
 <ul class="list-group">
-  <% @list.movies.each do |movie| %>
-    <li class="list-group-item"> <%= movie.title %> </li>
-     <li> <%= movie.overview %> </li>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"> <%= bookmark.movie.title %> </li>
+     <li> <%= bookmark.movie.overview %> </li>
     <%= link_to "Delete",
-    list_bookmark_path(@list),
+    bookmark_path(bookmark),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <% end %>
 </ul>

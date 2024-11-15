@@ -1,9 +1,13 @@
-<h1>Lists</h1>
+<div class="banner">
+<h1>LISTS</h1>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list)  %></li>
-  <% end %>
-</ul>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(...)">
+    <% @lists.each do |list| %>
+      <%= link_to list.name, list_path(list) %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to "New list", new_list_path, class:"btn btn-primary"%>
